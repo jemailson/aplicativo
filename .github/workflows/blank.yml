@@ -1,0 +1,95 @@
+Crie um projeto SaaS full-stack chamado "SmartMeal AI".
+
+### Função principal:
+Usuários cadastram suas preferências alimentares, restrições, tempo disponível, orçamento e ingredientes em casa. O sistema usa OpenAI GPT-4 via API para gerar um cardápio semanal personalizado.
+
+### Funcionalidades:
+
+1. Autenticação:
+- Login e registro com e-mail e senha
+- Recuperação de senha por e-mail
+
+2. Painel do usuário:
+- Formulário com campos:
+  - Objetivo alimentar (emagrecimento, saúde, performance)
+  - Restrições alimentares (ex: vegano, sem glúten, etc.)
+  - Ingredientes disponíveis
+  - Tempo máximo por refeição
+  - Orçamento semanal (R$)
+- Botão "Gerar cardápio com IA"
+
+3. Geração de cardápio:
+- O sistema envia os dados do usuário via API para o GPT-4
+- O GPT responde com:
+  - Cardápio semanal (café, almoço, jantar)
+  - Lista de compras organizada por categoria
+  - Sugestões de substituições
+- Os dados gerados são salvos no banco de dados do usuário
+
+4. Dashboard:
+- Histórico de cardápios anteriores
+- Favoritos
+- Exportar para PDF
+
+5. Plano gratuito e pago:
+- Gratuito: Geração de 1 cardápio por semana
+- Pago: Geração ilimitada + exportação + favoritos
+
+6. Área do admin:
+- Gerenciar usuários e planos
+- Monitorar uso da API OpenAI
+
+---
+
+### Stack preferida:
+- Frontend: React com TailwindCSS
+- Backend: Node.js com Express
+- Banco de dados: PostgreSQL
+- Autenticação: JWT
+- API externa: OpenAI GPT-4
+- Exportação para PDF: PDFKit ou similar
+- Pagamentos: Stripe (mock ou integração real opcional)
+
+---
+
+### Observações:
+- Crie a arquitetura de pastas organizada (frontend, backend, etc.)
+- Use variáveis de ambiente para as chaves da API
+- Crie funções separadas para chamadas à OpenAI
+- Forneça instruções de instalação no README
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
