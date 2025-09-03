@@ -1,0 +1,59 @@
+Crie um projeto SaaS full-stack chamado "SmartMeal AI".
+
+### Função principal:
+Usuários cadastram suas preferências alimentares, restrições, tempo disponível, orçamento e ingredientes em casa. O sistema usa OpenAI GPT-4 via API para gerar um cardápio semanal personalizado.
+
+### Funcionalidades:
+
+1. Autenticação:
+- Login e registro com e-mail e senha
+- Recuperação de senha por e-mail
+
+2. Painel do usuário:
+- Formulário com campos:
+  - Objetivo alimentar (emagrecimento, saúde, performance)
+  - Restrições alimentares (ex: vegano, sem glúten, etc.)
+  - Ingredientes disponíveis
+  - Tempo máximo por refeição
+  - Orçamento semanal (R$)
+- Botão "Gerar cardápio com IA"
+
+3. Geração de cardápio:
+- O sistema envia os dados do usuário via API para o GPT-4
+- O GPT responde com:
+  - Cardápio semanal (café, almoço, jantar)
+  - Lista de compras organizada por categoria
+  - Sugestões de substituições
+- Os dados gerados são salvos no banco de dados do usuário
+
+4. Dashboard:
+- Histórico de cardápios anteriores
+- Favoritos
+- Exportar para PDF
+
+5. Plano gratuito e pago:
+- Gratuito: Geração de 1 cardápio por semana
+- Pago: Geração ilimitada + exportação + favoritos
+
+6. Área do admin:
+- Gerenciar usuários e planos
+- Monitorar uso da API OpenAI
+
+---
+
+### Stack preferida:
+- Frontend: React com TailwindCSS
+- Backend: Node.js com Express
+- Banco de dados: PostgreSQL
+- Autenticação: JWT
+- API externa: OpenAI GPT-4
+- Exportação para PDF: PDFKit ou similar
+- Pagamentos: Stripe (mock ou integração real opcional)
+
+---
+
+### Observações:
+- Crie a arquitetura de pastas organizada (frontend, backend, etc.)
+- Use variáveis de ambiente para as chaves da API
+- Crie funções separadas para chamadas à OpenAI
+- Forneça instruções de instalação no README
